@@ -35,6 +35,13 @@ app.get '/athlete', (request, response) ->
               #console.log(info)
               response.render 'athlete', info
 
+app.get '/activities', (request, response) ->
+  options =
+             url: baseurl + '/athlete/activities/111008284',
+             "Authorization": "Bearer ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49"
+
+
 app.listen process.env.PORT || 3333
 
 #curl -XGET https://www.strava.com/api/v3/athletes/2396440 -d access_token=ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49
+#curl -XGET https://www.strava.com/api/v3/activities/111008284 -H "Authorization: Bearer ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49" | jq '.name'
