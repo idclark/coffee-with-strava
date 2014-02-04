@@ -11,7 +11,9 @@
         "hbs": "2.4.0",
         "stylus": "0.41.3",
         "request": "2.33.0",
-	"oath": " >= 0.9"
+	    "oath": " >= 0.9",
+        "coffee-script": "1.7.1"
+
     },
     "engines": {
         "node": ">= 0.10",

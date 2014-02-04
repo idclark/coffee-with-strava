@@ -3,8 +3,10 @@
   <title>Athlete</title>
 </head>
 <body>
-  <div id="shoe-table", class="shoes">
-    <table class="shoes">
+<section class="gear">
+
+<h2> {{firstname}} {{lastname}}'s gear </h2>
+    <table class="gear" id="shoes">
     <thead>
      <th>Name</th>
      <th>Distance (Meters)</th>
@@ -18,6 +20,20 @@
       {{/shoes}}
      </tbody>
     </table>
-  </div>
+
+  <table class="gear" id="bike">
+  <thead>
+  <th>Name</th>
+  <th>Distance (Meters)</th>
+  </thead>
+  <tbody>
+  {{#bikes}}
+  <td>{{name}}
+  <td>{{distance}}</td>
+  </tr>
+  {{/bikes}}
+  </tbody>
+  </table>
+  </section>
 </body>
 </html>

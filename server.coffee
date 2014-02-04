@@ -32,7 +32,7 @@ app.get '/athlete', (request, response) ->
     req options, (error, res, body) ->
         if !error and res.statusCode == 200
               info = JSON.parse body
-              console.log(info)
+              #console.log(info)
               response.render 'athlete', info
 
 app.listen process.env.PORT || 3333
