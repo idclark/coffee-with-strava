@@ -11,9 +11,10 @@ app.engine '.html', hbs.__express
 app.set 'views', __dirname + '/views'
 hbs.registerPartials __dirname + 'views/partials'
 
-app.use stylus.middleware __dirname + '/assets'
+app.use stylus.middleware __dirname + '/assets/stylesheets'
+app.use express.static __dirname + '/assets'
 
-baseurl = 'http://www.strava.com/api/v3'
+baseurl = 'https://www.strava.com/api/v3'
 #access_token =
 #prive_
 
@@ -38,8 +39,14 @@ app.get '/athlete', (request, response) ->
 app.get '/activities', (request, response) ->
   options =
              url: baseurl + '/athlete/activities/111008284',
-             "Authorization": "Bearer ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49"
+             headers: "Authorization: Bearer ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49"
 
+  req options, (error, res, body) ->
+    if !error and res.statusCode == 200
+      activity = JSON.parse body
+      console.log(activity)
+      console.log("hello")
+      response.render 'activity', activity
 
 app.listen process.env.PORT || 3333
 
