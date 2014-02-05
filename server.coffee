@@ -27,7 +27,7 @@ app.get '/', (request, response) ->
 
 app.get '/athlete', (request, response) ->
     options =
-               url: baseurl + '/athletes/2396440',
+               url: baseurl + '/athletes/2396440'
                qs: {access_token: 'ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49'}
 
     req options, (error, res, body) ->
@@ -36,16 +36,16 @@ app.get '/athlete', (request, response) ->
               #console.log(info)
               response.render 'athlete', info
 
-app.get '/activities', (request, response) ->
+app.get '/activity', (request, response) ->
   options =
-             url: baseurl + '/athlete/activities/111008284',
-             headers: "Authorization: Bearer ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49"
+             url: baseurl + '/athlete/activities/111008284'
+             headers: {"Authorization": ["Bearer ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49"]}
 
   req options, (error, res, body) ->
     if !error and res.statusCode == 200
       activity = JSON.parse body
       console.log(activity)
-      console.log("hello")
+      #console.log("hello")
       response.render 'activity', activity
 
 app.listen process.env.PORT || 3333
