@@ -38,8 +38,8 @@ app.get '/athlete', (request, response) ->
 
 app.get '/activity', (request, response) ->
   options =
-             url: baseurl + '/athlete/activities/111008284'
-             headers: {"Authorization": ["Bearer ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49"]}
+      url: baseurl + '/activities/111008284'
+      headers: {'Authorization': 'Bearer ac0bd2c2b020c232ebe2c5603b4c5ccb2c5ffa49'}
 
   req options, (error, res, body) ->
     if !error and res.statusCode == 200
