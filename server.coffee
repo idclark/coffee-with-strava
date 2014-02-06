@@ -44,8 +44,7 @@ app.get '/activity', (request, response) ->
   req options, (error, res, body) ->
     if !error and res.statusCode == 200
       activity = JSON.parse body
-      console.log(activity)
-      #console.log("hello")
+      #console.log(activity)
       response.render 'activity', activity
 
 app.listen process.env.PORT || 3333
