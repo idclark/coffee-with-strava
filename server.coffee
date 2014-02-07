@@ -12,7 +12,7 @@ app.set 'views', __dirname + '/views'
 hbs.registerPartials __dirname + 'views/partials'
 
 app.use stylus.middleware __dirname + '/assets/stylesheets'
-app.use express.static __dirname + '/assets'
+app.use express.static __dirname + '/assets/javascript'
 
 baseurl = 'https://www.strava.com/api/v3'
 #access_token =
